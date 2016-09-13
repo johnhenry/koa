@@ -16,7 +16,7 @@
 Koa-2-Browser requires browserify for ES2017  support.
 
 ```
-$ npm install koa@next
+$ npm install koa-2-browser
 ```
 
 ## Hello koa
