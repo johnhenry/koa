@@ -13,7 +13,7 @@
   Koa is not bundled with any middleware.
 
 ## Installation
-Koa requires __node v4.0.0__ or higher for (partial) ES2015 support.
+Koa-2-Browser requires browserify for ES2017  support.
 
 ```
 $ npm install koa@next
@@ -30,7 +30,7 @@ app.use(ctx => {
   ctx.body = 'Hello Koa';
 });
 
-app.listen(3000);
+app.listen();
 ```
 
 ## Getting started
