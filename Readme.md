@@ -5,7 +5,7 @@
   [![build status][travis-image]][travis-url]
   [![Test coverage][coveralls-image]][coveralls-url]
 
-  Expressive HTTP middleware framework for node.js to make web applications and APIs more enjoyable to write. Koa's middleware stack flows in a stack-like manner, allowing you to perform actions downstream then filter and manipulate the response upstream.
+  Expressive middleware framework for node.js to make web applications and APIs more enjoyable to write. Koa's middleware stack flows in a stack-like manner, allowing you to perform actions downstream then filter and manipulate the response upstream.
 
   Only methods that are common to nearly all HTTP servers are integrated directly into Koa's small ~570 SLOC codebase. This
   includes things like content negotiation, normalization of node inconsistencies, redirection, and a few others.
@@ -22,15 +22,22 @@ $ npm install koa-2-browser
 ## Hello koa
 
 ```js
+//Construct server
 const Koa = require('koa');
-const app = new Koa();
+window.app = new Koa();
 
 // response
-app.use(ctx => {
-  ctx.body = 'Hello Koa';
+window.app.use(ctx => {
+  ctx.body = 'Hello Koa 2 Browser!!!';
 });
 
-app.listen();
+window.app.listen();
+
+//Get response
+const response = window.app.respondTo(new window.Request('/'));
+response.on('finish', (response) => {
+  console.log(response.body);
+});
 ```
 
 ## Getting started
